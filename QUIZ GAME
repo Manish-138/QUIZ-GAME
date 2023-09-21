@@ -1,0 +1,39 @@
+# Define a dictionary to store quiz questions and answers
+quiz_questions = {
+    "What is the capital of France?": "Paris",
+    "Which planet is known as the Red Planet?": "Mars",
+    "What is the largest mammal in the world?": "Blue whale",
+    "What is the chemical symbol for gold?": "Au",
+}
+
+# Initialize the user's score
+score = 0
+
+# Welcome message and rules
+print("Welcome to the Quiz Game!")
+print("You will be asked a series of questions. Provide the correct answers to earn points.")
+print("Let's get started!\n")
+
+# Iterate through quiz questions
+for question, correct_answer in quiz_questions.items():
+    print(question)
+    user_answer = input("Your answer: ")
+
+    # Evaluate the user's answer
+    if user_answer.lower() == correct_answer.lower():
+        print("Correct!\n")
+        score += 1
+    else:
+        print(f"Incorrect. The correct answer is {correct_answer}.\n")
+
+# Display the final score and performance message
+print("Quiz completed!")
+print(f"Your final score is: {score}/{len(quiz_questions)}")
+
+# Provide feedback based on the score
+if score == len(quiz_questions):
+    print("Congratulations! You got all the answers correct.")
+elif score >= len(quiz_questions) / 2:
+    print("Good job! You did well.")
+else:
+    print("Keep practicing. You can do better next time.")
